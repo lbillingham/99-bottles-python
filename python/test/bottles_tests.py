@@ -7,14 +7,16 @@ xfail = pytest.mark.xfail()
 
 
 def test_the_first_verse():
+    """can we 'sing' the '99-bottles' verse?"""
     expected = """
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
 """
     assert expected == bottles.verse(99)
 
-@xfail
+
 def test_another_verse():
+    """can we 'sing' a verse between 1st and penultimate?"""
     expected = """
 89 bottles of beer on the wall, 89 bottles of beer.
 Take one down and pass it around, 88 bottles of beer on the wall.
