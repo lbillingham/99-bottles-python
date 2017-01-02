@@ -38,7 +38,7 @@ def test_verse_1():
     expected = """
 1 bottle of beer on the wall, 1 bottle of beer.
 Take it down and pass it around, no more bottles of beer on the wall.
-    """
+"""
     assert expected == bottles.verse(1)
 
 
@@ -47,7 +47,7 @@ def test_verse_0():
     expected = """
 No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.
-    """
+"""
     assert expected == bottles.verse(0)
 
 
