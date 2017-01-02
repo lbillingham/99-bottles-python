@@ -13,7 +13,7 @@ bottles
 
 
 Metz and Owens OOP design course... but in python
-
+We're using python 3.6 for the f strings.
 
 Features
 --------
