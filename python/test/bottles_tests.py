@@ -51,7 +51,7 @@ Go to the store and buy some more, 99 bottles of beer on the wall.
     assert expected == bottles.verse(0)
 
 
-@xfail
+
 def test_a_couple_verses():
     expected = """
 99 bottles of beer on the wall, 99 bottles of beer.

@@ -33,3 +33,14 @@ def verse(n_bottles):
         pronoun=pronoun
     )
     return PART_VERSE.format_map(custom_parts)
+
+
+def verses(n_bottles_start, n_bottles_end):
+    """
+    'sing' verses between:
+    - `'n_bottles_start' bottles of beer on the wall ...'
+    - `'n_bottles_end' bottles of beer on the wall ...'
+    """
+    bottle_range = range(n_bottles_start, n_bottles_end - 1, -1)
+    return ''.join(verse(i) for i in bottle_range)
+
