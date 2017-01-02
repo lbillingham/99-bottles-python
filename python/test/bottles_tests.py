@@ -33,7 +33,7 @@ Take one down and pass it around, 1 bottle of beer on the wall.
     assert expected == bottles.verse(2)
 
 
-@xfail
+
 def test_verse_1():
     expected = """
 1 bottle of beer on the wall, 1 bottle of beer.
