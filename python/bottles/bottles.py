@@ -8,31 +8,33 @@ in each verse, we use
 - `ves` (or `ves`) to indicate the vessel name of bottles/bottle/can etc.
 """
 
-PART_VERSE = """
-{num_ves_nth} {ves_nth} of beer on the wall, {num_ves_nth} {ves_nth} of beer.
-Take {pronoun} down and pass it around, {num_ves_n1th} {ves_np1th} of beer on the wall.
+
+_PART_VERSE = """
+{count_now} {vessel_now} of beer on the wall, {count_now} {vessel_now} of beer.
+Take {pronoun} down and pass it around, {count_next} {vessel_next} of beer on the wall.
 """
+
 
 def verse(n_bottles):
     """'sing' a single verse"""
-    fewer_bottles = n_bottles - 1
+    count_next = n_bottles - 1
     vessel_now = 'bottles'
     vessel_next = vessel_now
     pronoun = 'one'
-    if fewer_bottles == 1:
+    if count_next == 1:
         vessel_next = 'bottle'
     if n_bottles == 1:
         vessel_now = 'bottle'
-        fewer_bottles = 'no more'
+        count_next = 'no more'
         pronoun = 'it'
     custom_parts = dict(
-        num_ves_nth=n_bottles,
-        num_ves_n1th=fewer_bottles,
-        ves_nth=vessel_now,
-        ves_np1th=vessel_next,
+        count_now=n_bottles,
+        count_next=count_next,
+        vessel_now=vessel_now,
+        vessel_next=vessel_next,
         pronoun=pronoun
     )
-    return PART_VERSE.format_map(custom_parts)
+    return _PART_VERSE.format_map(custom_parts)
 
 
 def verses(n_bottles_start, n_bottles_end):

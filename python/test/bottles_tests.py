@@ -35,6 +35,7 @@ Take one down and pass it around, 1 bottle of beer on the wall.
 
 
 def test_verse_1():
+    """can we 'sing' the '1 bottle of beer' verse?"""
     expected = """
 1 bottle of beer on the wall, 1 bottle of beer.
 Take it down and pass it around, no more bottles of beer on the wall.
@@ -44,6 +45,7 @@ Take it down and pass it around, no more bottles of beer on the wall.
 
 @xfail
 def test_verse_0():
+    """can we 'sing' the 'no more bottles' verse?"""
     expected = """
 No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.
@@ -53,6 +55,10 @@ Go to the store and buy some more, 99 bottles of beer on the wall.
 
 
 def test_a_couple_verses():
+    """
+    can we 'sing' some early verses,
+    with many bottles, fitting the main pattern
+    """
     expected = """
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
@@ -62,8 +68,14 @@ Take one down and pass it around, 97 bottles of beer on the wall.
 """
     assert expected == bottles.verses(99, 98)
 
+
 @xfail
 def test_a_few_verses():
+    """
+    can we 'sing' some later verses,
+    with few bottles, after the main pattern
+    is broken
+    """
     expected = """
 2 bottles of beer on the wall, 2 bottles of beer.
 Take one down and pass it around, 1 bottle of beer on the wall.
