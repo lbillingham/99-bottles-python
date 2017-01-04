@@ -27,5 +27,10 @@ dependencies:
 - py=1.4.31=py36_0
 - pylint=1.5.4=py36_1
 - wrapt=1.10.8=py36_0
+- pip:
+  - colorama==0.3.7
+  - flake8-polyfill==1.0.1
+  - mando==0.3.3
+  - radon==1.4.2
 prefix: /home/ubuntu/miniconda/envs/bottles
 
