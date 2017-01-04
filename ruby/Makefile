@@ -1,4 +1,4 @@
-.PHONY: help  list test
+.PHONY: help  test
 
 help:
 	@echo "test - run test suite (uses Minitest)
