@@ -8,9 +8,6 @@ help:
 	@echo "coverage - check code coverage quickly with the default Python"
 	@echo "docs - generate Sphinx HTML documentation, including API docs"
 
-#   @echo "sdist - package"
-#   @echo "testall - run tests on every Python version with tox"
-#   @echo "release - package and upload a release"
 
 clean: clean-build clean-pyc
 
@@ -31,9 +28,6 @@ lint:
 test:
 	py.test
 
-# test-all:
-	# tox
-
 coverage:
 	coverage run --source bottles setup.py test
 	coverage report -m
@@ -47,12 +41,3 @@ docs:
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	open docs/_build/html/index.html
-
-# release: clean
-	# python setup.py sdist upload
-	# python setup.py bdist_wheel upload
-
-# sdist: clean
-	# python setup.py sdist
-	# python setup.py bdist_wheel upload
-	# ls -l dist
