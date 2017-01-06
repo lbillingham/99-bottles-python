@@ -6,7 +6,12 @@ OOP design book
 
 def verse(num_bottles):
     """'sing' one single verse of the song"""
-    if num_bottles == 2:
+    if num_bottles == 1:
+        lyrics = ("1 bottle of beer on the wall, " +
+                  "1 bottle of beer.\n" +
+                  "Take it down and pass it around, " +
+                  "No more bottles of beer on the wall.\n")
+    elif num_bottles == 2:
         lyrics = ("2 bottles of beer on the wall, " +
                   "2 bottles of beer.\n" +
                   "Take one down and pass it around, " +

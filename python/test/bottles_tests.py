@@ -39,3 +39,17 @@ def test_2_bottles_verse():
                 "Take one down and pass it around, " +
                 "1 bottle of beer on the wall.\n")
     assert expected == bottles.verse(2)
+
+def test_1_bottles_verse():
+    """
+    can we 'sing' verse '1 bottle of beer ...'
+    we're going to have to deal
+    - pluralization
+    - 'no more',
+    - 'take _it_ down'
+    """
+    expected = ("1 bottle of beer on the wall, " +
+                "1 bottle of beer.\n" +
+                "Take it down and pass it around, " +
+                "No more bottles of beer on the wall.\n")
+    assert expected == bottles.verse(1)
