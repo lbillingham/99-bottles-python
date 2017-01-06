@@ -6,20 +6,19 @@ OOP design book
 
 def verse(num_bottles):
     """'sing' one single verse of the song"""
-    if num_bottles == 1:
-        lyrics = ("1 bottle of beer on the wall, " +
-                  "1 bottle of beer.\n" +
-                  "Take it down and pass it around, " +
-                  "No more bottles of beer on the wall.\n")
-    elif num_bottles == 2:
-        lyrics = ("2 bottles of beer on the wall, " +
-                  "2 bottles of beer.\n" +
-                  "Take one down and pass it around, " +
-                  "1 bottle of beer on the wall.\n")
-    else:
-        lyrics = (f"{num_bottles} bottles of beer on the wall, " +
-                  f"{num_bottles} bottles of beer.\n" +
-                  "Take one down and pass it around, " +
-                  f"{num_bottles - 1} bottles of beer on the wall.\n")
+    switcher = {
+    1: ("1 bottle of beer on the wall, " +
+        "1 bottle of beer.\n" +
+        "Take it down and pass it around, " +
+        "No more bottles of beer on the wall.\n"),
+    2: ("2 bottles of beer on the wall, " +
+        "2 bottles of beer.\n" +
+        "Take one down and pass it around, " +
+        "1 bottle of beer on the wall.\n")
+    }
+    default = (f"{num_bottles} bottles of beer on the wall, " +
+               f"{num_bottles} bottles of beer.\n" +
+               "Take one down and pass it around, " +
+               f"{num_bottles - 1} bottles of beer on the wall.\n")
 
-    return lyrics
+    return switcher.get(num_bottles, default)
