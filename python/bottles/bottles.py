@@ -8,6 +8,7 @@ def verse(num_bottles):
     lyrics = (f"{num_bottles} bottles of beer on the wall, " +
               f"{num_bottles} bottles of beer.\n" +
               "Take one down and pass it around, " +
-              f"{num_bottles - 1} bottles of beer on the wall.\n")
+              f"{num_bottles - 1} bottle{'' if num_bottles - 1 == 1 else 's'} " +
+              "of beer on the wall.\n")
 
     return lyrics
