@@ -7,6 +7,7 @@ but in python
 """
 from bottles import bottles
 
+
 def test_99_bottles_verse():
     """
     can we 'sing' the verse beginning
@@ -18,6 +19,7 @@ def test_99_bottles_verse():
                 "98 bottles of beer on the wall.\n")
     assert expected == bottles.verse(99)
 
+
 def test_3_bottles_verse():
     """can wwe 'sing' verse '3 bottles of beer ...'"""
     expected = ("3 bottles of beer on the wall, " +
@@ -25,3 +27,15 @@ def test_3_bottles_verse():
                 "Take one down and pass it around, " +
                 "2 bottles of beer on the wall.\n")
     assert expected == bottles.verse(3)
+
+
+def test_2_bottles_verse():
+    """
+    can we 'sing' verse '2 bottles of beer ...'
+    we're going to have to deal with pluralization
+    """
+    expected = ("2 bottles of beer on the wall, " +
+                "2 bottles of beer.\n" +
+                "Take one down and pass it around, " +
+                "1 bottle of beer on the wall.\n")
+    assert expected == bottles.verse(2)
