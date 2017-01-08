@@ -51,7 +51,7 @@ def test_1_bottles_verse():
     expected = ("1 bottle of beer on the wall, " +
                 "1 bottle of beer.\n" +
                 "Take it down and pass it around, " +
-                "No more bottles of beer on the wall.\n")
+                "no more bottles of beer on the wall.\n")
     assert expected == bottles.verse(1)
 
 def test_0_bottles_verse():

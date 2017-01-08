@@ -7,10 +7,14 @@ OOP design book
 def verse(num_bottles):
     """'sing' one single verse of the song"""
     switcher = {
+    0: ("No more bottles of beer on the wall, " +
+        "no more bottles of beer.\n" +
+        "Go to the store and buy some more, " +
+        "99 bottles of beer on the wall.\n"),
     1: ("1 bottle of beer on the wall, " +
         "1 bottle of beer.\n" +
         "Take it down and pass it around, " +
-        "No more bottles of beer on the wall.\n"),
+        "no more bottles of beer on the wall.\n"),
     2: ("2 bottles of beer on the wall, " +
         "2 bottles of beer.\n" +
         "Take one down and pass it around, " +
