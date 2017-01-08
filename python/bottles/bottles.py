@@ -26,3 +26,17 @@ def verse(num_bottles):
                f"{num_bottles - 1} bottles of beer on the wall.\n")
 
     return switcher.get(num_bottles, default)
+
+
+def verses(_, __):
+    """'sing' several verses of song from `_` to `__`"""
+    lyrics = ("99 bottles of beer on the wall, " +
+             "99 bottles of beer.\n" +
+             "Take one down and pass it around, " +
+             "98 bottles of beer on the wall."
+             "\n"
+             "97 bottles of beer on the wall."
+             "98 bottles of beer.\n" +
+             "Take one down and pass it around, " +
+             "97 bottles of beer on the wall.")
+    return lyrics

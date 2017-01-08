@@ -54,6 +54,7 @@ def test_1_bottles_verse():
                 "no more bottles of beer on the wall.\n")
     assert expected == bottles.verse(1)
 
+
 def test_0_bottles_verse():
     """
     can we 'sing' verse '1 bottle of beer ...'
@@ -67,3 +68,22 @@ def test_0_bottles_verse():
                 "Go to the store and buy some more, " +
                 "99 bottles of beer on the wall.\n")
     assert expected == bottles.verse(0)
+
+
+def test_verses_99_to_98():
+    """
+    can we 'sing' verse
+    '99 bottles of beer...'
+    followed by verse
+    '98 bottles of beer...'
+    """
+    expected = ("99 bottles of beer on the wall, " +
+                "99 bottles of beer.\n" +
+                "Take one down and pass it around, " +
+                "98 bottles of beer on the wall."
+                "\n"
+                "97 bottles of beer on the wall."
+                "98 bottles of beer.\n" +
+                "Take one down and pass it around, " +
+                "97 bottles of beer on the wall.")
+    assert expected == bottles.verses(99, 98)
