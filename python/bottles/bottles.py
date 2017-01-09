@@ -28,7 +28,10 @@ def verse(num_bottles):
     return switcher.get(num_bottles, default)
 
 
-def verses(_, __):
-    """'sing' several verses of song from `_` to `__`"""
-    lyrics = verse(99) + "\n" + verse(98)
+def verses(starting, ending):
+    """
+    'sing' several verses of song from `starting` to `ending`
+    """
+    verse_range = range(starting, ending - 1, -1)
+    lyrics = "\n".join(verse(n) for n in verse_range)
     return lyrics

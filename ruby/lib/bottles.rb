@@ -25,7 +25,8 @@ class Bottles
         end
     end
 
-    def verses(_, _)
-        verse(99) + "\n" + verse(98)
+    def verses(starting, ending)
+        # starting.downto(ending).collect{ |n| verse(n)}.join("\n")
+        starting.downto(ending).collect {|i| verse(i)}.join("\n")
     end
 end
