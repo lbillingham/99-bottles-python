@@ -35,3 +35,7 @@ def verses(starting, ending):
     verse_range = range(starting, ending - 1, -1)
     lyrics = "\n".join(verse(n) for n in verse_range)
     return lyrics
+
+def song():
+    """'sing' the entire 99 bittles _song_"""
+    return verses(99, 0)
