@@ -30,13 +30,5 @@ def verse(num_bottles):
 
 def verses(_, __):
     """'sing' several verses of song from `_` to `__`"""
-    lyrics = ("99 bottles of beer on the wall, " +
-             "99 bottles of beer.\n" +
-             "Take one down and pass it around, " +
-             "98 bottles of beer on the wall."
-             "\n"
-             "97 bottles of beer on the wall."
-             "98 bottles of beer.\n" +
-             "Take one down and pass it around, " +
-             "97 bottles of beer on the wall.")
+    lyrics = verse(99) + "\n" + verse(98)
     return lyrics
