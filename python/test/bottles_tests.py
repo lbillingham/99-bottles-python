@@ -115,8 +115,7 @@ def test_verses_2_to_0():
 
 def test_the_whole_song():
     """can we 'sing' the entire song?"""
-        expected = """
-99 bottles of beer on the wall, 99 bottles of beer.
+    expected = """99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
 
 98 bottles of beer on the wall, 98 bottles of beer.
