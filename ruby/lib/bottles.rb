@@ -18,7 +18,7 @@ class Bottles
             "Take one down and pass it around, " +
             "1 bottle of beer on the wall.\n"
         else
-            "#{number} bottles of beer on the wall, " +
+            "#{number} #{container} of beer on the wall, " +
             "#{number} bottles of beer.\n" +
             "Take one down and pass it around, " +
             "#{number-1} bottles of beer on the wall.\n"
@@ -33,7 +33,7 @@ class Bottles
         verses(99, 0)
     end
 
-    def container
+    def container(number=:FIXME)
         "bottles"
     end
 end
