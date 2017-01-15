@@ -73,6 +73,19 @@ class BottlesTest < Minitest::Test
         assert_equal expected, Bottles.new.verses(2, 0)
     end
 
+    def test_verses_7_to_6_six_pack
+        expected = "7 bottles of beer on the wall, " +
+                   "7 bottles of beer.\n" +
+                   "Take one down and pass it around, " +
+                   "1 six-pack of beer on the wall.\n" +
+                   "\n" +
+                   "1 six-pack of beer on the wall, " +
+                   "1 six-pack of beer.\n" +
+                   "Take one down and pass it around, " +
+                   "5 bottles of beer on the wall.\n"
+        assert_equal expected, Bottles.new.verses(7, 6)
+    end
+
     def test_the_whole_song
         expected = <<-SONG
 99 bottles of beer on the wall, 99 bottles of beer.
@@ -352,9 +365,9 @@ Take one down and pass it around, 8 bottles of beer on the wall.
 Take one down and pass it around, 7 bottles of beer on the wall.
 
 7 bottles of beer on the wall, 7 bottles of beer.
-Take one down and pass it around, 6 bottles of beer on the wall.
+Take one down and pass it around, 1 six-pack of beer on the wall.
 
-6 bottles of beer on the wall, 6 bottles of beer.
+1 six-pack of beer on the wall, 1 six-pack of beer.
 Take one down and pass it around, 5 bottles of beer on the wall.
 
 5 bottles of beer on the wall, 5 bottles of beer.
