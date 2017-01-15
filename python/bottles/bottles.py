@@ -4,7 +4,7 @@ OOP design book
 """
 
 
-def verse(num_bottles):
+def verse(number):
     """'sing' one single verse of the song"""
     switcher = {
     0: ("No more bottles of beer on the wall, " +
@@ -14,18 +14,14 @@ def verse(num_bottles):
     1: ("1 bottle of beer on the wall, " +
         "1 bottle of beer.\n" +
         "Take it down and pass it around, " +
-        "no more bottles of beer on the wall.\n"),
-    2: ("2 bottles of beer on the wall, " +
-        "2 bottles of beer.\n" +
-        "Take one down and pass it around, " +
-        "1 bottle of beer on the wall.\n")
+        "no more bottles of beer on the wall.\n") #,
     }
-    default = (f"{num_bottles} bottles of beer on the wall, " +
-               f"{num_bottles} bottles of beer.\n" +
+    default = (f"{number} bottles of beer on the wall, " +
+               f"{number} bottles of beer.\n" +
                "Take one down and pass it around, " +
-               f"{num_bottles - 1} bottles of beer on the wall.\n")
+               f"{number - 1} {container(number - 1)} of beer on the wall.\n")
 
-    return switcher.get(num_bottles, default)
+    return switcher.get(number, default)
 
 
 def verses(starting, ending):
@@ -39,3 +35,14 @@ def verses(starting, ending):
 def song():
     """'sing' the entire 99 bittles _song_"""
     return verses(99, 0)
+
+
+def container(number):
+    """
+    what is the drink in?
+    n bottles, a bottle, 1 six-pack, some barrels?
+    """
+    if number == 1:
+        return 'bottle'
+    else:
+        return 'bottles'
