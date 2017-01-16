@@ -10,16 +10,12 @@ def verse(number):
     0: ("No more bottles of beer on the wall, " +
         "no more bottles of beer.\n" +
         "Go to the store and buy some more, " +
-        "99 bottles of beer on the wall.\n"),
-    1: ("1 bottle of beer on the wall, " +
-        "1 bottle of beer.\n" +
-        "Take it down and pass it around, " +
-        "no more bottles of beer on the wall.\n") #,
+        "99 bottles of beer on the wall.\n")
     }
-    default = (f"{number} bottles of beer on the wall, " +
-               f"{number} bottles of beer.\n" +
-               "Take one down and pass it around, " +
-               f"{number - 1} {container(number - 1)} of beer on the wall.\n")
+    default = (f"{number} {container(number)} of beer on the wall, " +
+               f"{number} {container(number)} of beer.\n" +
+               f"Take {pronoun(number)} down and pass it around, " +
+               f"{quantity(number - 1)} {container(number - 1)} of beer on the wall.\n")
 
     return switcher.get(number, default)
 
@@ -32,8 +28,9 @@ def verses(starting, ending):
     lyrics = "\n".join(verse(n) for n in verse_range)
     return lyrics
 
+
 def song():
-    """'sing' the entire 99 bittles _song_"""
+    """'sing' the entire 99 bottles _song_"""
     return verses(99, 0)
 
 
@@ -46,3 +43,25 @@ def container(number):
         return 'bottle'
     else:
         return 'bottles'
+
+
+def pronoun(number):
+    """
+    what to sing instead of bottles/container
+    in 'Take XXX down ...' part
+    """
+    if number == 1:
+        return "it"
+    else:
+        return "one"
+
+def quantity(number):
+    """
+    how describe the number of bottles
+    99, 98, ..., 2, 1, no more
+    """
+    if number == 0:
+        return "no more"
+    else:
+        return number
+
