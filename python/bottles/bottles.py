@@ -7,7 +7,7 @@ OOP design book
 def verse(number):
     """'sing' one single verse of the song"""
     switcher = {
-    0: (f"{quantity(number).capitalize()} bottles of beer on the wall, " +
+    0: (f"{quantity(number).capitalize()} {container(number)} of beer on the wall, " +
         "no more bottles of beer.\n" +
         "Go to the store and buy some more, " +
         "99 bottles of beer on the wall.\n")
