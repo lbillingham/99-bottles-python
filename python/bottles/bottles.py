@@ -10,7 +10,7 @@ def verse(number):
     0: (f"{quantity(number).capitalize()} {container(number)} of beer on the wall, " +
         f"{quantity(number)} {container(number)} of beer.\n" +
         f"{action(number)}" +
-        "99 bottles of beer on the wall.\n")
+        f"{quantity(number -1)} bottles of beer on the wall.\n")
     }
     default = (f"{quantity(number).capitalize()} {container(number)} of beer on the wall, " +
                f"{quantity(number)} {container(number)} of beer.\n" +
@@ -62,6 +62,8 @@ def quantity(number):
     """
     if number == 0:
         return "no more"
+    elif number == -1:
+        return '99'
     else:
         return str(number)
 
