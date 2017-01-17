@@ -7,12 +7,12 @@ OOP design book
 def verse(number):
     """'sing' one single verse of the song"""
     switcher = {
-    0: (f"{str(quantity(number)).capitalize()} bottles of beer on the wall, " +
+    0: (f"{quantity(number).capitalize()} bottles of beer on the wall, " +
         "no more bottles of beer.\n" +
         "Go to the store and buy some more, " +
         "99 bottles of beer on the wall.\n")
     }
-    default = (f"{str(quantity(number)).capitalize()} {container(number)} of beer on the wall, " +
+    default = (f"{quantity(number).capitalize()} {container(number)} of beer on the wall, " +
                f"{number} {container(number)} of beer.\n" +
                f"Take {pronoun(number)} down and pass it around, " +
                f"{quantity(number - 1)} {container(number - 1)} of beer on the wall.\n")
@@ -63,5 +63,5 @@ def quantity(number):
     if number == 0:
         return "no more"
     else:
-        return number
+        return str(number)
 
