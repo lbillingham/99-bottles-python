@@ -9,7 +9,7 @@ def verse(number):
     template = (f"{quantity(number).capitalize()} {container(number)} of beer on the wall, " +
                f"{quantity(number)} {container(number)} of beer.\n" +
                f"{action(number)}" +
-               f"{quantity(sucessor(number))} {container(number - 1)} of beer on the wall.\n")
+               f"{quantity(sucessor(number))} {container(sucessor(number))} of beer on the wall.\n")
 
     return template
 
