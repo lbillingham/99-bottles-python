@@ -8,13 +8,13 @@ def verse(number):
     """'sing' one single verse of the song"""
     switcher = {
     0: (f"{quantity(number).capitalize()} {container(number)} of beer on the wall, " +
-        "no more bottles of beer.\n" +
-        "Go to the store and buy some more, " +
+        f"{quantity(number)} {container(number)} of beer.\n" +
+        f"{action(number)}" +
         "99 bottles of beer on the wall.\n")
     }
     default = (f"{quantity(number).capitalize()} {container(number)} of beer on the wall, " +
-               f"{number} {container(number)} of beer.\n" +
-               f"Take {pronoun(number)} down and pass it around, " +
+               f"{quantity(number)} {container(number)} of beer.\n" +
+               f"{action(number)}" +
                f"{quantity(number - 1)} {container(number - 1)} of beer on the wall.\n")
 
     return switcher.get(number, default)
@@ -65,3 +65,11 @@ def quantity(number):
     else:
         return str(number)
 
+def action(number):
+    """
+    what will we do with the beer
+    """
+    if number == 0:
+        return "Go to the store and buy some more, "
+    else:
+        return f"Take {pronoun(number)} down and pass it around, "
