@@ -12,7 +12,7 @@ def verse(number):
         "Go to the store and buy some more, " +
         "99 bottles of beer on the wall.\n")
     }
-    default = (f"{quantity(number)} {container(number)} of beer on the wall, " +
+    default = (f"{str(quantity(number)).capitalize()} {container(number)} of beer on the wall, " +
                f"{number} {container(number)} of beer.\n" +
                f"Take {pronoun(number)} down and pass it around, " +
                f"{quantity(number - 1)} {container(number - 1)} of beer on the wall.\n")
