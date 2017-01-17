@@ -6,18 +6,12 @@ OOP design book
 
 def verse(number):
     """'sing' one single verse of the song"""
-    switcher = {
-    0: (f"{quantity(number).capitalize()} {container(number)} of beer on the wall, " +
-        f"{quantity(number)} {container(number)} of beer.\n" +
-        f"{action(number)}" +
-        f"{quantity(number -1)} bottles of beer on the wall.\n")
-    }
-    default = (f"{quantity(number).capitalize()} {container(number)} of beer on the wall, " +
+    template = (f"{quantity(number).capitalize()} {container(number)} of beer on the wall, " +
                f"{quantity(number)} {container(number)} of beer.\n" +
                f"{action(number)}" +
-               f"{quantity(number - 1)} {container(number - 1)} of beer on the wall.\n")
+               f"{quantity(sucessor(number))} {container(number - 1)} of beer on the wall.\n")
 
-    return switcher.get(number, default)
+    return template
 
 
 def verses(starting, ending):
@@ -62,8 +56,6 @@ def quantity(number):
     """
     if number == 0:
         return "no more"
-    elif number == -1:
-        return '99'
     else:
         return str(number)
 
@@ -75,3 +67,10 @@ def action(number):
         return "Go to the store and buy some more, "
     else:
         return f"Take {pronoun(number)} down and pass it around, "
+
+
+def sucessor(number):
+    if number == 0:
+        return 99
+    else:
+        return number - 1
