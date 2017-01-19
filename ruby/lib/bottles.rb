@@ -6,7 +6,7 @@ class Bottles
             "#{quantity(number).capitalize} bottles of beer on the wall, " +
             "#{quantity(number)} #{container(number)} of beer.\n" +
             "#{action(number)}" +
-            "99 bottles of beer on the wall.\n"
+            "#{quantity(number-1)} #{container(number-1)} of beer on the wall.\n"
         else
             "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
             "#{quantity(number)} #{container(number)} of beer.\n" +
@@ -40,7 +40,10 @@ class Bottles
     end
 
     def quantity(number)
-        if number == 0
+        case number
+        when -1
+            "99"
+        when 0
             "no more"
         else
             number.to_s
