@@ -48,7 +48,7 @@ def quantity(number):
     how describe the number of bottles
     99, 98, ..., 2, 1, no more
     """
-    return BottleNumber(number).quantity(number)
+    return BottleNumber(number).quantity
 
 
 def action(number):
@@ -111,12 +111,13 @@ class BottleNumber:
         else:
             return "one"
 
-    def quantity(self, number):
+    @property
+    def quantity(self, delme=None):
         """
         how describe the number of bottles
         99, 98, ..., 2, 1, no more
         """
-        if number == 0:
+        if self.number == 0:
             return "no more"
         else:
-            return str(number)
+            return str(self.number)
