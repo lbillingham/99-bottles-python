@@ -55,10 +55,7 @@ def action(number):
     """
     what will we do with the beer
     """
-    if number == 0:
-        return "Go to the store and buy some more, "
-    else:
-        return f"Take {pronoun(number)} down and pass it around, "
+    return BottleNumber(number).action(number)
 
 
 def sucessor(number):
