@@ -36,13 +36,6 @@ def container(number):
     return BottleNumber(number).container
 
 
-def pronoun(number):
-    """
-    what to sing instead of bottles/container
-    in 'Take XXX down ...' part
-    """
-    return BottleNumber(number).pronoun(number)
-
 def quantity(number):
     """
     how describe the number of bottles
@@ -99,20 +92,21 @@ class BottleNumber:
         if self.number == 0:
             return "Go to the store and buy some more, "
         else:
-            return f"Take {pronoun(self.number)} down and pass it around, "
+            return f"Take {self.pronoun} down and pass it around, "
 
-    def pronoun(self, number):
+    @property
+    def pronoun(self):
         """
         what to sing instead of bottles/container
         in 'Take XXX down ...' part
         """
-        if number == 1:
+        if self.number == 1:
             return "it"
         else:
             return "one"
 
     @property
-    def quantity(self, delme=None):
+    def quantity(self):
         """
         how describe the number of bottles
         99, 98, ..., 2, 1, no more
