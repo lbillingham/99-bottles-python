@@ -33,12 +33,7 @@ def container(number):
     what is the drink in?
     n bottles, a bottle, 1 six-pack, some barrels?
     """
-    if number == 1:
-        out_cont = 'bottle'
-    else:
-        out_cont = 'bottles'
-    out_cont = BottleNumber(number).container(number)
-    return out_cont
+    return BottleNumber(number).container(number)
 
 
 def pronoun(number):
