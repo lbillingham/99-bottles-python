@@ -43,16 +43,13 @@ def pronoun(number):
     """
     return BottleNumber(number).pronoun(number)
 
-
 def quantity(number):
     """
     how describe the number of bottles
     99, 98, ..., 2, 1, no more
     """
-    if number == 0:
-        return "no more"
-    else:
-        return str(number)
+    return BottleNumber(number).quantity(number)
+
 
 def action(number):
     """
