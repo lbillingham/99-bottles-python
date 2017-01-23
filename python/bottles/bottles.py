@@ -85,7 +85,7 @@ class BottleNumber:
         what is the drink in?
         n bottles, a bottle, 1 six-pack, some barrels?
         """
-        if number == 1:
+        if self.number == 1:
             return 'bottle'
         else:
             return 'bottles'
