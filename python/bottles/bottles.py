@@ -70,7 +70,63 @@ def action(number):
 
 
 def sucessor(number):
+    """
+    what is next in the sequence after `number`
+    """
     if number == 0:
         return 99
     else:
         return number - 1
+
+class BottleNumber:
+
+    def __init__(self, number):
+        self.number = number
+
+    def sucessor(self, number):
+        """
+        what is next in the sequence after `number`
+        """
+        if number == 0:
+            return 99
+        else:
+            return number - 1
+
+    def container(self, number):
+        """
+        what is the drink in?
+        n bottles, a bottle, 1 six-pack, some barrels?
+        """
+        if number == 1:
+            return 'bottle'
+        else:
+            return 'bottles'
+
+    def action(self, number):
+        """
+        what will we do with the beer
+        """
+        if number == 0:
+            return "Go to the store and buy some more, "
+        else:
+            return f"Take {pronoun(number)} down and pass it around, "
+
+    def pronoun(self, number):
+        """
+        what to sing instead of bottles/container
+        in 'Take XXX down ...' part
+        """
+        if number == 1:
+            return "it"
+        else:
+            return "one"
+
+    def quantity(self, number):
+        """
+        how describe the number of bottles
+        99, 98, ..., 2, 1, no more
+        """
+        if number == 0:
+            return "no more"
+        else:
+            return str(number)
