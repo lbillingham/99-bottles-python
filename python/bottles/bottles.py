@@ -55,7 +55,7 @@ def action(number):
     """
     what will we do with the beer
     """
-    return BottleNumber(number).action(number)
+    return BottleNumber(number).action
 
 
 def sucessor(number):
@@ -91,14 +91,15 @@ class BottleNumber:
         else:
             return 'bottles'
 
-    def action(self, number):
+    @property
+    def action(self):
         """
         what will we do with the beer
         """
-        if number == 0:
+        if self.number == 0:
             return "Go to the store and buy some more, "
         else:
-            return f"Take {pronoun(number)} down and pass it around, "
+            return f"Take {pronoun(self.number)} down and pass it around, "
 
     def pronoun(self, number):
         """
