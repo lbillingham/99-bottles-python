@@ -80,7 +80,7 @@ class BottleNumber:
         else:
             return number - 1
 
-    def container(self, number):
+    def container(self, delete_me):
         """
         what is the drink in?
         n bottles, a bottle, 1 six-pack, some barrels?
