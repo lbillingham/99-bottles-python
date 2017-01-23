@@ -62,10 +62,9 @@ def sucessor(number):
     """
     what is next in the sequence after `number`
     """
-    if number == 0:
-        return 99
-    else:
-        return number - 1
+    return BottleNumber(number).sucessor(number)
+
+
 
 class BottleNumber:
 
