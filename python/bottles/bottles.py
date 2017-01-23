@@ -41,12 +41,8 @@ def pronoun(number):
     what to sing instead of bottles/container
     in 'Take XXX down ...' part
     """
-    BottleNumber(number).pronoun(number)
-    if number == 1:
-        out_pnoun = "it"
-    else:
-        out_pnoun = "one"
-    return out_pnoun
+    return BottleNumber(number).pronoun(number)
+
 
 def quantity(number):
     """
