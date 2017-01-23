@@ -55,7 +55,7 @@ def sucessor(number):
     """
     what is next in the sequence after `number`
     """
-    return BottleNumber(number).sucessor(number)
+    return BottleNumber(number).sucessor
 
 
 
@@ -64,14 +64,15 @@ class BottleNumber:
     def __init__(self, number):
         self.number = number
 
-    def sucessor(self, number):
+    @property
+    def sucessor(self):
         """
         what is next in the sequence after `number`
         """
-        if number == 0:
+        if self.number == 0:
             return 99
         else:
-            return number - 1
+            return self.number - 1
 
     @property
     def container(self):
