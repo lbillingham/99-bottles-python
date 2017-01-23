@@ -33,7 +33,7 @@ def container(number):
     what is the drink in?
     n bottles, a bottle, 1 six-pack, some barrels?
     """
-    return BottleNumber(number).container()
+    return BottleNumber(number).container
 
 
 def pronoun(number):
@@ -80,7 +80,8 @@ class BottleNumber:
         else:
             return number - 1
 
-    def container(self, delete_me=None):
+    @property
+    def container(self):
         """
         what is the drink in?
         n bottles, a bottle, 1 six-pack, some barrels?
