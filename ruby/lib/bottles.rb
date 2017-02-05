@@ -7,13 +7,6 @@ class Bottles
         "#{quantity(sucessor(number))} #{container(sucessor(number))} of beer on the wall.\n"
     end
 
-    def sucessor(number)
-        if number == 0
-            99
-        else
-            number-1
-        end
-    end
 
     def verses(starting, ending)
         starting.downto(ending).map {|n| verse(n)}.join("\n")
@@ -28,36 +21,33 @@ class Bottles
     end
 
     def pronoun(number)
-        if number == 1
-            "it"
-        else
-            "one"
-        end
+        BottleNumber.new(number).pronoun(number)
     end
 
     def quantity(number)
-        if number == 0
-            "no more"
-        else
-            number.to_s
-        end
+        BottleNumber.new(number).quantity(number)
     end
 
     def action(number)
-        if number == 0
-            "Go to the store and buy some more, "
-        else
-            "Take #{pronoun(number)} down and pass it around, "
-        end
+        BottleNumber.new(number).action(number)
+    end
+    def sucessor(number)
+        BottleNumber.new(number).sucessor(number)
     end
 end
 
 
 class BottleNumber
     attr_reader :number
-
     def initialize(number)
         @number = number
+    end
+    def action(number)
+        if number == 0
+            "Go to the store and buy some more, "
+        else
+            "Take #{pronoun(number)} down and pass it around, "
+        end
     end
     def container(number)
         if number == 1
@@ -66,14 +56,13 @@ class BottleNumber
             "bottles"
         end
     end
- def pronoun(number)
+    def pronoun(number)
         if number == 1
             "it"
         else
             "one"
         end
     end
-
     def quantity(number)
         if number == 0
             "no more"
@@ -81,12 +70,11 @@ class BottleNumber
             number.to_s
         end
     end
-
-    def action(number)
+    def sucessor(number)
         if number == 0
-            "Go to the store and buy some more, "
+            99
         else
-            "Take #{pronoun(number)} down and pass it around, "
+            number-1
         end
     end
 end
