@@ -20,19 +20,15 @@ class Bottles
         BottleNumber.new(number).container
     end
 
-    def pronoun(number)
-        BottleNumber.new(number).pronoun(number)
-    end
-
     def quantity(number)
-        BottleNumber.new(number).quantity(number)
+        BottleNumber.new(number).quantity
     end
 
     def action(number)
-        BottleNumber.new(number).action(number)
+        BottleNumber.new(number).action
     end
     def sucessor(number)
-        BottleNumber.new(number).sucessor(number)
+        BottleNumber.new(number).sucessor
     end
 end
 
@@ -42,35 +38,35 @@ class BottleNumber
     def initialize(number)
         @number = number
     end
-    def action(number)
+    def action
         if number == 0
             "Go to the store and buy some more, "
         else
-            "Take #{pronoun(number)} down and pass it around, "
+            "Take #{pronoun} down and pass it around, "
         end
     end
-    def container(delete_me=nildelete_me=nildelete_me=nil)
+    def container
         if number == 1
             "bottle"
         else
             "bottles"
         end
     end
-    def pronoun(number)
+    def pronoun
         if number == 1
             "it"
         else
             "one"
         end
     end
-    def quantity(number)
+    def quantity
         if number == 0
             "no more"
         else
             number.to_s
         end
     end
-    def sucessor(number)
+    def sucessor
         if number == 0
             99
         else
