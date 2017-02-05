@@ -17,7 +17,7 @@ class Bottles
     end
 
     def container(number)
-        BottleNumber.new(number).container(number)
+        BottleNumber.new(number).container
     end
 
     def pronoun(number)
@@ -49,7 +49,7 @@ class BottleNumber
             "Take #{pronoun(number)} down and pass it around, "
         end
     end
-    def container(number)
+    def container(delete_me=nildelete_me=nildelete_me=nil)
         if number == 1
             "bottle"
         else
