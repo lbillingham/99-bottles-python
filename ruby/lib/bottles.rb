@@ -2,10 +2,11 @@ class Bottles
 
     def verse(number)
         bottle_number = BottleNumber.new(number)
+        next_bottle_number = BottleNumber.new(bottle_number.successor)
         "#{bottle_number.quantity.capitalize} #{bottle_number.container} of beer on the wall, " +
         "#{bottle_number.quantity} #{bottle_number.container} of beer.\n" +
         "#{bottle_number.action}" +
-        "#{quantity(sucessor(number))} #{container(sucessor(number))} of beer on the wall.\n"
+        "#{next_bottle_number.quantity} #{next_bottle_number.container} of beer on the wall.\n"
     end
 
 
@@ -15,21 +16,6 @@ class Bottles
 
     def song()
         verses(99, 0)
-    end
-
-    def container(number)
-        BottleNumber.new(number).container
-    end
-
-    def quantity(number)
-        BottleNumber.new(number).quantity
-    end
-
-    def action(number)
-        BottleNumber.new(number).action
-    end
-    def sucessor(number)
-        BottleNumber.new(number).sucessor
     end
 end
 
@@ -67,7 +53,7 @@ class BottleNumber
             number.to_s
         end
     end
-    def sucessor
+    def successor
         if number == 0
             99
         else
