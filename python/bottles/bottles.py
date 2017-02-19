@@ -91,3 +91,9 @@ class BottleNumber:
             return "no more"
         else:
             return str(self.number)
+
+
+class BottleNumber0(BottleNumber):
+    @property
+    def quantity(self):
+        return 'no more'
