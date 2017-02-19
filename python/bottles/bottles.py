@@ -6,8 +6,10 @@ OOP design book
 
 def verse(number):
     """'sing' one single verse of the song"""
-    bottle_number = BottleNumber(number)
-    next_bottle_number = BottleNumber(bottle_number.sucessor)
+    now_cls = BottleNumber0 if number == 0 else BottleNumber
+    bottle_number = now_cls(number)
+    next_cls = BottleNumber0 if bottle_number.sucessor == 0 else BottleNumber
+    next_bottle_number = next_cls(bottle_number.sucessor)
 
     template = (f"{bottle_number}".capitalize() +
                 " of beer on the wall, " +
@@ -65,10 +67,10 @@ class BottleNumber:
         """
         what will we do with the beer
         """
-        if self.number == 0:
-            return "Go to the store and buy some more, "
-        else:
-            return f"Take {self.pronoun} down and pass it around, "
+        # if self.number == 0:
+        #     return "Go to the store and buy some more, "
+        # else:
+        return f"Take {self.pronoun} down and pass it around, "
 
     @property
     def pronoun(self):
@@ -87,13 +89,16 @@ class BottleNumber:
         how describe the number of bottles
         99, 98, ..., 2, 1, no more
         """
-        if self.number == 0:
-            return "no more"
-        else:
-            return str(self.number)
+        # if self.number == 0:
+        #     return "no more"
+        # else:
+        return str(self.number)
 
 
 class BottleNumber0(BottleNumber):
     @property
     def quantity(self):
         return 'no more'
+    @property
+    def action(self):
+        return "Go to the store and buy some more, "
