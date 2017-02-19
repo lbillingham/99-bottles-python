@@ -95,10 +95,7 @@ class BottleNumber:
         how describe the number of bottles
         99, 98, ..., 2, 1, no more
         """
-        if self.number == 0:
-            return "no more"
-        else:
-            return str(self.number)
+        return str(self.number)
 
 
 class BottleNumber0(BottleNumber):
