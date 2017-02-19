@@ -6,10 +6,12 @@ OOP design book
 
 def verse(number):
     """'sing' one single verse of the song"""
-    template = (f"{quantity(number).capitalize()} {container(number)} of beer on the wall, " +
-               f"{quantity(number)} {container(number)} of beer.\n" +
-               f"{action(number)}" +
-               f"{quantity(sucessor(number))} {container(sucessor(number))} of beer on the wall.\n")
+    bottle_number = BottleNumber(number)
+    next_bottle_number = BottleNumber(bottle_number.sucessor)
+    template = (f"{bottle_number.quantity.capitalize()} {bottle_number.container} of beer on the wall, " +
+               f"{bottle_number.quantity} {bottle_number.container} of beer.\n" +
+               f"{bottle_number.action}" +
+               f"{next_bottle_number.quantity} {next_bottle_number.container} of beer on the wall.\n")
 
     return template
 
@@ -26,37 +28,6 @@ def verses(starting, ending):
 def song():
     """'sing' the entire 99 bottles _song_"""
     return verses(99, 0)
-
-
-def container(number):
-    """
-    what is the drink in?
-    n bottles, a bottle, 1 six-pack, some barrels?
-    """
-    return BottleNumber(number).container
-
-
-def quantity(number):
-    """
-    how describe the number of bottles
-    99, 98, ..., 2, 1, no more
-    """
-    return BottleNumber(number).quantity
-
-
-def action(number):
-    """
-    what will we do with the beer
-    """
-    return BottleNumber(number).action
-
-
-def sucessor(number):
-    """
-    what is next in the sequence after `number`
-    """
-    return BottleNumber(number).sucessor
-
 
 
 class BottleNumber:
