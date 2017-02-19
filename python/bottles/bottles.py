@@ -3,17 +3,10 @@ code to 'sing' 99 bottles of beer, after the Metz and Owen
 OOP design book
 """
 
-def bottle_number_for(number):
-    """factory for choosing correct BottleNumber"""
-    choices = {0: BottleNumber0, 1: BottleNumber1}
-    class_chosen = choices.get(number, BottleNumber)
-    return class_chosen(number)
-
-
 def verse(number):
     """'sing' one single verse of the song"""
-    bottle_number = bottle_number_for(number)
-    next_bottle_number = bottle_number_for(bottle_number.sucessor)
+    bottle_number = BottleNumber.for_number(number)
+    next_bottle_number = BottleNumber.for_number(bottle_number.sucessor)
 
     template = (f"{bottle_number}".capitalize() +
                 " of beer on the wall, " +
@@ -44,6 +37,12 @@ class BottleNumber:
 
     def __str__(self):
         return f'{self.quantity} {self.container}'
+
+    @staticmethod
+    def for_number(number):
+        choices = {0: BottleNumber0, 1: BottleNumber1}
+        class_chosen = choices.get(number, BottleNumber)
+        return class_chosen(number)
 
     @property
     def sucessor(self):
