@@ -5,7 +5,12 @@ OOP design book
 
 def bottle_number_for(number):
     """factory for choosing correct BottleNumber"""
-    return BottleNumber(number)
+    if number == 0:
+        cls_wanted = BottleNumber0
+    else:
+        cls_wanted = BottleNumber
+    return cls_wanted(number)
+
 
 def verse(number):
     """'sing' one single verse of the song"""
