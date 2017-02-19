@@ -5,13 +5,9 @@ OOP design book
 
 def bottle_number_for(number):
     """factory for choosing correct BottleNumber"""
-    if number == 0:
-        cls_wanted = BottleNumber0
-    elif number ==1:
-        cls_wanted = BottleNumber1
-    else:
-        cls_wanted = BottleNumber
-    return cls_wanted(number)
+    choices = {0: BottleNumber0, 1: BottleNumber1}
+    class_chosen = choices.get(number, BottleNumber)
+    return class_chosen(number)
 
 
 def verse(number):
