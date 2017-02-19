@@ -3,11 +3,14 @@ code to 'sing' 99 bottles of beer, after the Metz and Owen
 OOP design book
 """
 
+def bottle_number_for(number):
+    """factory for choosing correct BottleNumber"""
+    return BottleNumber(number)
 
 def verse(number):
     """'sing' one single verse of the song"""
-    bottle_number = BottleNumber(number)
-    next_bottle_number = BottleNumber(bottle_number.sucessor)
+    bottle_number = bottle_number_for(number)
+    next_bottle_number = bottle_number_for(bottle_number.sucessor)
 
     template = (f"{bottle_number}".capitalize() +
                 " of beer on the wall, " +
