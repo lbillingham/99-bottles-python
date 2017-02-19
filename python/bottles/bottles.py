@@ -52,10 +52,7 @@ class BottleNumber:
         """
         what is next in the sequence after `number`
         """
-        if self.number == 0:
-            return 99
-        else:
-            return self.number - 1
+        return self.number - 1
 
     @property
     def container(self):
@@ -73,10 +70,7 @@ class BottleNumber:
         """
         what will we do with the beer
         """
-        if self.number == 0:
-            return "Go to the store and buy some more, "
-        else:
-            return f"Take {self.pronoun} down and pass it around, "
+        return f"Take {self.pronoun} down and pass it around, "
 
     @property
     def pronoun(self):
@@ -100,5 +94,13 @@ class BottleNumber:
 
 class BottleNumber0(BottleNumber):
     @property
+    def action(self):
+        return "Go to the store and buy some more, "
+
+    @property
     def quantity(self):
         return 'no more'
+
+    @property
+    def sucessor(self):
+        return 99
