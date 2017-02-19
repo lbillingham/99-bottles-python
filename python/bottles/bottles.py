@@ -7,6 +7,8 @@ def bottle_number_for(number):
     """factory for choosing correct BottleNumber"""
     if number == 0:
         cls_wanted = BottleNumber0
+    elif number ==1:
+        cls_wanted = BottleNumber1
     else:
         cls_wanted = BottleNumber
     return cls_wanted(number)
@@ -60,10 +62,7 @@ class BottleNumber:
         what is the drink in?
         n bottles, a bottle, 1 six-pack, some barrels?
         """
-        if self.number == 1:
-            return 'bottle'
-        else:
-            return 'bottles'
+        return 'bottles'
 
     @property
     def action(self):
@@ -78,10 +77,7 @@ class BottleNumber:
         what to sing instead of bottles/container
         in 'Take XXX down ...' part
         """
-        if self.number == 1:
-            return "it"
-        else:
-            return "one"
+        return "one"
 
     @property
     def quantity(self):
@@ -106,4 +102,10 @@ class BottleNumber0(BottleNumber):
         return 99
 
 class BottleNumber1(BottleNumber):
-    pass
+    @property
+    def pronoun(self):
+        return "it"
+
+    @property
+    def container(self):
+        return 'bottle'
