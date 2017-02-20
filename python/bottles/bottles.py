@@ -96,7 +96,7 @@ class BottleNumber0(BottleNumber):
 
     @property
     def sucessor(self):
-        return 99
+        return BottleNumber.for_(99)
 
 class BottleNumber1(BottleNumber):
     @property
