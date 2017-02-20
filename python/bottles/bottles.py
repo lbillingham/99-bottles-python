@@ -6,7 +6,7 @@ OOP design book
 def verse(number):
     """'sing' one single verse of the song"""
     bottle_number = BottleNumber.for_(number)
-    next_bottle_number = BottleNumber.for_(bottle_number.sucessor)
+    next_bottle_number = bottle_number.sucessor
 
     template = (f"{bottle_number}".capitalize() +
                 " of beer on the wall, " +
@@ -51,7 +51,7 @@ class BottleNumber:
         """
         what is next in the sequence after `number`
         """
-        return self.number - 1
+        return BottleNumber.for_(self.number - 1)
 
     @property
     def container(self):
