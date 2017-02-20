@@ -39,7 +39,7 @@ class BottleNumber:
 
     @staticmethod
     def for_(number):
-        choices = {0: BottleNumber0, 1: BottleNumber1}
+        choices = {0: BottleNumber0, 1: BottleNumber1, 6:BottleNumber6}
         class_chosen = choices.get(number, BottleNumber)
         return class_chosen(number)
 
