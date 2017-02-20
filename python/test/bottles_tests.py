@@ -20,6 +20,28 @@ def test_99_bottles_verse():
     assert expected == bottles.verse(99)
 
 
+def test_6_bottles_verse():
+    """
+    we'll need to 'sing' about
+    '1 six-pack of  beer ...'
+    after we 'take one down ...'
+    """
+    expected = ("7 bottles of beer on the wall, " +
+                "7 bottles of beer.\n" +
+                "Take one down and pass it around, " +
+                "1 six-pack of beer on the wall.\n")
+    assert expected == bottles.verse(7)
+
+
+def test_6_bottles_verse():
+    """can we 'sing' about '1 six-pack of  beer ...'"""
+    expected = ("1 six-pack of beer on the wall, " +
+                "1 six-pack of beer.\n" +
+                "Take one down and pass it around, " +
+                "5 bottles of beer on the wall.\n")
+    assert expected == bottles.verse(6)
+
+
 def test_3_bottles_verse():
     """can wwe 'sing' verse '3 bottles of beer ...'"""
     expected = ("3 bottles of beer on the wall, " +
@@ -392,9 +414,9 @@ Take one down and pass it around, 8 bottles of beer on the wall.
 Take one down and pass it around, 7 bottles of beer on the wall.
 
 7 bottles of beer on the wall, 7 bottles of beer.
-Take one down and pass it around, 6 bottles of beer on the wall.
+Take one down and pass it around, 1 six-pack of beer on the wall.
 
-6 bottles of beer on the wall, 6 bottles of beer.
+1 six-pack of beer on the wall, 1 six-pack of beer.
 Take one down and pass it around, 5 bottles of beer on the wall.
 
 5 bottles of beer on the wall, 5 bottles of beer.
