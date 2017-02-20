@@ -103,3 +103,8 @@ class BottleNumber1(BottleNumber):
     @property
     def container(self):
         return 'bottle'
+
+class BottleNumber6(BottleNumber):
+    @property
+    def container(self):
+        return 'six-pack'
