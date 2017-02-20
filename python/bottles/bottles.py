@@ -6,13 +6,12 @@ OOP design book
 def verse(number):
     """'sing' one single verse of the song"""
     bottle_number = BottleNumber.for_(number)
-    next_bottle_number = bottle_number.sucessor
 
     template = (f"{bottle_number}".capitalize() +
                 " of beer on the wall, " +
                f"{bottle_number} of beer.\n" +
                f"{bottle_number.action}" +
-               f"{next_bottle_number} of beer on the wall.\n")
+               f"{bottle_number.sucessor} of beer on the wall.\n")
     return template
 
 
