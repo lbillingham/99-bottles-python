@@ -20,7 +20,7 @@ def test_99_bottles_verse():
     assert expected == bottles.verse(99)
 
 
-def test_6_bottles_verse():
+def test_7_bottles_verse():
     """
     we'll need to 'sing' about
     '1 six-pack of  beer ...'
