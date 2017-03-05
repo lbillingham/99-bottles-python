@@ -3,6 +3,8 @@ class Bottles
     def bottle_number_for(number)
         if number == 0
             BottleNumber0
+        elsif number == 1
+            BottleNumber1
         else
             BottleNumber
         end.new(number)
@@ -37,18 +39,10 @@ class BottleNumber
         "Take #{pronoun} down and pass it around, "
     end
     def container
-        if number == 1
-            "bottle"
-        else
-            "bottles"
-        end
+        "bottles"
     end
     def pronoun
-        if number == 1
-            "it"
-        else
-            "one"
-        end
+        "one"
     end
     def quantity
         number.to_s
@@ -67,5 +61,14 @@ class BottleNumber0 < BottleNumber
     end
     def successor
         99
+    end
+end
+
+class BottleNumber1 < BottleNumber
+    def container
+        "bottle"
+    end
+    def pronoun
+        "it"
     end
 end
